@@ -1,0 +1,138 @@
+@mixin image-replacement {
+  display: block;
+  overflow: hidden;
+  text-indent: 99999999px;
+  white-space: nowrap;
+}
+
+
+@mixin animation($args) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+  animation: $args;
+}
+
+@mixin border-radius($args) {
+  border: {
+    radius: $args;
+  }
+
+  background: {
+    clip: padding-box;
+  }
+}
+
+@mixin box-shadow($args) {
+  -webkit-box-shadow: $args;
+  box-shadow: $args;
+}
+@mixin inner-shadow($args) {
+ @include box-shadow(inset $args);
+}
+
+@mixin box-sizing($args) {
+  -webkit-box-sizing: $args;
+  -moz-box-sizing: $args;
+  -ms-box-sizing: $args;
+  box-sizing: $args;
+}
+@mixin border-box(){
+ @include box-sizing(border-box);
+}
+@mixin content-box(){
+ @include box-sizing(content-box);
+}
+
+// Opacity
+
+@mixin opacity($factor) {
+  $iefactor: $factor*100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=${iefactor})";
+  opacity: $factor;
+}
+
+// Filter
+
+@mixin filter($filter) {
+  -moz-filter: $filter;
+  -webkit-filter: $filter;
+  -ms-filter: $filter;
+  filter: $filter;
+}
+
+
+// Text Shadow
+
+@mixin text-shadow($args) {
+  text-shadow: $args;
+}
+
+
+// Transforms
+
+@mixin transform($args) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin backface-visibility($args) {
+  -webkit-backface-visibility: $args;
+  -moz-backface-visibility: $args;
+  -ms-backface-visibility: $args;
+  -o-backface-visibility: $args;
+  backface-visibility: $args;
+}
+
+@mixin transform($args) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin perspective($args) {
+  -webkit-perspective: $args;
+  -moz-perspective: $args;
+  -ms-perspective: $args;
+  -o-perspective: $args;
+  perspective: $args;
+}
+
+
+// Transitions
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  -ms-transition: $args;
+  transition: $args;
+}
+
+@mixin background-size($size) {
+  background-size: $size;
+  .lt-ie9 & {
+    -ms-behavior: url("//${cdn-domain}/js/bgsize.htc");
+  }
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}

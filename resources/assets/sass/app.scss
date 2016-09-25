@@ -1,0 +1,15 @@
+@import "utils/vendor-specific";
+@import "utils/reset";
+@import "utils/devices";
+@import "utils/variables";
+
+@import "fonts/flaticon";
+
+@import "pages/auth";
+@import "pages/home";
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
